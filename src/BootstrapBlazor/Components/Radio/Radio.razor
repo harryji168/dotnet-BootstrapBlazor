@@ -1,0 +1,10 @@
+﻿@namespace BootstrapBlazor.Components
+@inherits Checkbox<SelectedItem>
+
+<div @attributes="AdditionalAttributes" class="@ClassString" aria-checked="@StateString">
+    <input class="@InputClassString" type="radio" name="@GroupName" id="@Id" disabled="@Disabled" checked="@CheckedString" @onclick="@OnClickHandler">
+    @if (ShowAfterLabel && !string.IsNullOrEmpty(DisplayText))
+    {
+        <label class="form-check-label" for="@Id">@DisplayText</label>
+    }
+</div>

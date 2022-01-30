@@ -1,0 +1,14 @@
+﻿@namespace BootstrapBlazor.Components
+@inherits BootstrapComponentBase
+
+<div @attributes="@AdditionalAttributes" class="qrcode" @ref="QRCodeElement">
+    <div class="qrcode-img"></div>
+    @if (ShowButtons)
+    {
+        <div class="input-group qrcode-buttons">
+            <input type="text" class="form-control qrcode-text" placeholder="@PlaceHolder" @bind="Content">
+            <Button Icon="fa fa-times" Text="@ClearButtonText" Color="@Color.Secondary" OnClick="@Clear"></Button>
+            <Button Icon="fa fa-qrcode" Text="@GenerateButtonText" Color="@Color.Success" OnClick="@Generate"></Button>
+        </div>
+    }
+</div>

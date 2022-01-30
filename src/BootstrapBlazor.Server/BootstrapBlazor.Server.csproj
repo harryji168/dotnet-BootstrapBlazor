@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  
+  <PropertyGroup>
+    <IsWebProject>true</IsWebProject>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BootstrapBlazor.Middleware" Version="1.*" />
+    <PackageReference Include="Longbow.Logging" Version="5.2.0" />
+    <PackageReference Include="Longbow.Tasks" Version="5.*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BootstrapBlazor.Shared\BootstrapBlazor.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

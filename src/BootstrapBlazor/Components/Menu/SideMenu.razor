@@ -1,0 +1,24 @@
+﻿@namespace BootstrapBlazor.Components
+@inherits IdComponentBase
+
+<ul @attributes="@AdditionalAttributes" class="@GetMenuClassString" id="@Id">
+    @foreach (var item in Items)
+    {
+        if (item.Items.Any())
+        {
+            <li>
+                <MenuLink Item="@item" />
+                @if (!item.IsDisabled)
+                {
+                    <SideMenu Items="@item.Items" OnClick="@OnClickItem" class="d-none" />
+                }
+            </li>
+        }
+        else
+        {
+            <li @onclick:stopPropagation @onclick="() => OnClickItem(item)">
+                <MenuLink Item="@item" />
+            </li>
+        }
+    }
+</ul>

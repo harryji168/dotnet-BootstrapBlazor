@@ -1,0 +1,15 @@
+﻿@namespace BootstrapBlazor.Components
+@typeparam TValue
+@inherits ValidateBase<TValue>
+
+@if (IsShowLabel)
+{
+    <label class="form-label" required="@Required" for="@Id">@DisplayText</label>
+}
+<div @attributes="AdditionalAttributes" class="@ClassString" aria-checked="@StateString">
+    <input class="@InputClassString" type="checkbox" id="@Id" disabled="@Disabled" checked="@CheckedString" @onclick="@OnToggleClick" />
+    @if (ShowAfterLabel && !string.IsNullOrEmpty(DisplayText))
+    {
+        <label class="form-check-label" for="@Id">@DisplayText</label>
+    }
+</div>

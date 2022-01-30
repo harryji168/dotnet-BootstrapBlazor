@@ -1,0 +1,14 @@
+﻿@namespace BootstrapBlazor.Components
+@typeparam TValue
+@inherits BootstrapInputBase<TValue>
+
+@if (IsShowLabel)
+{
+    <label class="form-label" required="@Required" for="@Id">@DisplayText</label>
+}
+
+<input @attributes="@AdditionalAttributes" type="@Type" placeholder="@PlaceHolder" id="@Id" readonly="@ReadonlyString" class="@ClassName" disabled="@Disabled" @bind-value="CurrentValueAsString" @bind-value:event="onchange" @ref="FocusElement" />
+
+<CascadingValue Value="this" IsFixed="true">
+    @ChildContent
+</CascadingValue>

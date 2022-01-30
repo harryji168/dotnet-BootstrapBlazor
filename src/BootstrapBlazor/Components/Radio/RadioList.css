@@ -1,0 +1,22 @@
+﻿.radio-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+    .radio-list .form-check {
+        width: 120px;
+    }
+
+    .radio-list.is-vertical {
+        flex-direction: column;
+        height: auto;
+        line-height: unset;
+    }
+
+        .radio-list.is-vertical .form-check:not(:last-child) {
+            margin-bottom: .5rem;
+        }
+
+.form-inline .radio-list .form-check {
+    display: inline-block;
+}

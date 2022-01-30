@@ -1,0 +1,17 @@
+﻿@namespace BootstrapBlazor.Components
+@inherits AlertBase
+
+<div @attributes="@AdditionalAttributes" role="alert" class="@ClassName">
+    <div class="alert-content">
+        @if (!string.IsNullOrEmpty(Icon))
+        {
+            <i class="@Icon"></i>
+        }
+        @ChildContent
+    </div>
+    @if (ShowDismiss)
+    {
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close" @onclick="@OnClick">
+        </button>
+    }
+</div>
